@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>云账号中心</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img class="sidebar-icon" src="./img/logo.png" alt="logo">
+      <span>云中控台</span>
+    </div>
+    <ul class="sidebar-item">
+      <li class="sidebar-li">
+        <img src="./img/business-icon.png" alt="商户管理">
+        <a href="#">商户管理</a>
+      </li>
+      <li class="sidebar-li choice-item">
+        <img src="./img/app.png" alt="应用管理">
+        <a href="#">应用管理</a>
+        <img class="sidebar-item-arrow reverse" src="./img/arrow.jpg" alt="arrow">
+      </li>
+      <!--       
+        这个ul实际应该放在li里面。
+        但考虑到不会实现js动态效果，而显示时小箭头的垂直定位又是根据li高度来的，因此这里抽出来写在li外面。
+       -->
+      <ul class="sub-sidebar">
+        <li><a href="#">应用列表</a></li>
+        <li><a href="#">订单管理</a></li>
+        <li><a href="#">到期统计</a></li>
+      </ul>
+      <li class="sidebar-li">
+        <img src="./img/takeout.jpg" alt="外卖管理">
+        <a href="#">外卖管理</a>
+        <img class="sidebar-item-arrow" src="./img/arrow.jpg" alt="arrow">
+      </li>
+      <li class="sidebar-li">
+        <img src="./img/pay.jpg" alt="支付网关管理">
+        <a href="#">支付网关管理</a>
+        <img class="sidebar-item-arrow" src="./img/arrow.jpg" alt="arrow">
+      </li>
+    </ul>
+  </div>
+  <div class="content">
+    <div class="header">
+      <img class="header-icon" src="./img/sidebar.jpg" alt="sidebar">
+      <img class="header-user-icon" src="./img/people.jpg" alt="user">
+    </div>
+    <div class="bread">
+      <img src="./img/business.jpg" alt="bread">
+      <h1>商户管理</h1>
+    </div>
+    <div class="body">
+      <div class="table-content">
+        <div class="search">
+          <span class="label">条件：</span>
+          <input class="search-input" type="text" placeholder="商户名、管理员或手机号">
+          <button class="search-button">搜 索</button>
+        </div>
+        <div class="option">
+          <button class="btn btn-primary">+ 新增商户</button>
+          <button class="btn btn-disable">停 用</button>
+          <button class="btn btn-disable">启 用</button>
+          <button class="btn btn-disable">删 除</button>
+          <button class="btn btn-default">重置配置包</button>
+        </div>
+        <table border="1" class="table">
+          <tr>
+            <th class="align-center"><input type="checkbox"></th>
+            <th>商户名称</th>
+            <th>管理员</th>
+            <th>管理员手机号</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td class="table-opt">
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td>
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td class="table-opt">
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td>
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td class="table-opt">
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td>
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td class="table-opt">
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td>
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td class="table-opt">
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="align-center"><input type="checkbox"></td>
+            <td>测试智慧餐厅</td>
+            <td>张乃璎</td>
+            <td>13562515732</td>
+            <td class="normal"><img src="./img/normal.jpg" alt="normal">正常</td>
+            <td>
+              <span class="opt">编辑</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">收款账号管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">应用管理</span>
+              <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+              <span class="opt">更多<img src="./img/arrow-down.jpg" alt="arrow-down"></span>
+            </td>
+          </tr>
+        </table>
+        <div class="page">
+          <span class="total">共10122条</span>
+          <span class="page-btn">＜</span>
+          <span class="page-btn choose-page">1</span>
+          <span class="page-btn">2</span>
+          <span class="page-btn">3</span>
+          <span class="page-btn">4</span>
+          <span class="page-btn">5</span>
+          <span class="total">...</span>
+          <span class="page-btn">1013</span>
+          <span class="page-btn">＞</span>
+          <span class="page-btn">10条 / 页</span>
+          <span class="total">跳至</span>
+          <input class="page-input" type="text">
+          <span class="total">页</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      Choice云中控台 v1.0
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,365 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+ul,li,a {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+html,body {
+  height: 100%;
+  /* font-size: 100px; */
+}
+
+/* 导航栏部分 */
+.sidebar {
+  width: 224px;
+  height: 100%;
+  float: left;
+  background-color: #3E3E3E;
+  /* 避免子元素的margin影响父元素 */
+  overflow:hidden;
+}
+
+.sidebar-logo{
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+  margin: 28px 0px;
+  padding-left: 26px;
+  color: #999999;
+}
+
+.sidebar-icon {
+  width: 60px;
+  height: auto;
+  vertical-align: text-bottom;
+}
+
+.sidebar-item {
+  float: left;
+}
+
+.sidebar-li {
+  position: relative;
+  /* 以下代码用于解决边界重叠问题及float后宽度显示有误问题 */
+  /* 浮动元素不会和垂直方向上其他元素的margin折叠 */
+  float: left;
+  width: calc(224px - 23px);
+  /* 以上代码用于解决边界重叠问题 */
+  padding-left: 23px;
+  margin: 4px 0px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #999999;
+}
+
+.sidebar-li:hover{
+  background-color: #494949;
+  color: #2F91FC;
+  cursor: pointer;
+}
+
+.sidebar-item img {
+  vertical-align: middle;
+  margin-right: 9px;
+}
+
+.sidebar-item-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 18px;
+}
+
+.choice-item a{
+  color: white;
+}
+
+.reverse {
+  -moz-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1);
+}
+
+.sub-sidebar{
+  /* 避免父元素高度塌陷 */
+  float: left;
+  width: 100%;
+  background-color: #000C17;
+}
+
+.sub-sidebar li {
+  /* float的目的是清除垂直外边距重叠 */
+  float: left;
+  width: calc(224px - 47px*2);
+  padding: 0px 47px;
+  margin: 4px 0px;
+  font-size: 14px;
+  line-height: 40px;
+  color: #999999;
+}
+
+
+.sub-sidebar li:hover {
+  color: #2F91FC;
+}
+
+/* 内容部分 */
+.content {
+  width: calc(100%-224px);
+  margin-left: 224px;
+  height: 100%;
+  overflow: auto;
+}
+
+/* 头部 */
+.header {
+  height: 47px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #F1F2F3;
+  box-shadow: 0px 1px 4px #ebedee;
+}
+
+.header-icon {
+  margin: 17px 0px 0px 10px;
+}
+
+.header-user-icon {
+  float: right;
+  margin: 17px 54px 0px 0px;
+}
+
+/* 面包屑 */
+.bread {
+  background-color: #FFFFFF;
+  height: 24px;
+  padding: 16px 32px;
+  line-height: 24px;
+  vertical-align: text-bottom;
+}
+
+.bread h1 {
+  float: left;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.bread img {
+  float: left;
+  line-height: 1;
+  vertical-align: baseline;
+  margin: 4.5px 4px;
+}
+
+/* 主体部分 */
+.body {
+  background-color: #F8F8F8;
+  padding: 24px 23px;
+}
+
+.table-content {
+  width: calc(100% -2px - 32px - 32px);
+  padding: 23px 32px;
+  background-color: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 1px;
+}
+/* 搜索部分 */
+.search{
+  display: block;
+  padding-left: 2.984%;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 14px;
+  padding-left: 20px;
+}
+
+.search-input {
+  width: 22%;
+  height: 12px;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+  padding: 10px 11px 8px 11px;
+  margin-right: 60px;
+}
+
+.search-input::-webkit-input-placeholder { /* WebKit browsers */
+  color: #BFBFBF;
+}
+.search-input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #BFBFBF;
+}
+.search-input::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #BFBFBF;
+}
+.search-input:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color: #BFBFBF;
+}
+
+.search-button {
+  width: 64px;
+  height: 33px;
+  background-color: #1F8FE7;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+/* 操作按钮列 */
+.btn {
+  height: 32px;
+  padding: 0px 15px;
+  border-radius: 3px;
+  border: 1px solid #D9D9D9;
+  color: #000000;
+}
+
+.btn-primary {
+  background-color: #1F8FE7;
+  border: none;
+  height: 32px;
+  color: #FFFFFF;
+}
+
+.btn-disable {
+  background-color: #F3F5F7;
+  margin-left: 16px;
+  color: #B6B8B9;
+}
+
+.btn-default {
+  background-color: #FFFFFF;
+  margin-left: 16px;
+}
+
+/* 表格部分 */
+.table {
+  width: 100%;
+  margin-top: 16px;
+  border: 1px solid #E8E8E8;
+  /* 边框合并 */
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+.table th {
+  font-size: 13px;
+  color: #666666;
+  padding: 13px;
+  text-align: left;
+  background-color: #FAFAFA;
+}
+
+.table td {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 13px;
+  text-align: left;
+  background-color: #FAFAFA;
+}
+
+.align-center {
+  width: 42px;
+  text-align: center !important;
+}
+
+/* checkbox样式设置 */
+.table input[type=checkbox] {
+  width: 14px;
+  height: 14px;
+  position: relative;
+}
+
+.table input[type=checkbox]::before{
+  content:'';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  line-height:14px;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #D9D9D9;
+  background-color: #FFFFFF;
+}
+
+.table input[type=checkbox]:checked::before {
+  font-family: '微软雅黑';
+  color: #FFFFFF;
+  background-color:#1F8FE7;
+  content: '✔';
+}
+
+/* 状态 */
+.normal {
+  color: #54C42A !important;
+}
+
+.normal img {
+  margin-right: 8px;
+}
+
+/* 操作 */
+.opt {
+  color: #2591FC;
+}
+
+.opt img {
+  margin-left: 2px;
+}
+
+/* 分页部分 */
+.page {
+  margin: 16px 0px 40px 0px;
+  text-align: right;
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.total {
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.page-btn{
+  padding: 8px 12px;
+  border: 1px solid #D9D9D9;
+  font-size: 13px;
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.page-input{
+  width: 28px;
+  height: 32px;
+  padding: 0px 11px;
+  border: 1px solid #D9D9D9;
+  border-radius: 3px;
+}
+
+.choose-page{
+  border: 1px solid #1F8FE7;
+}
+
+/* 底部 */
+.footer {
+  background-color: #FFFFFF;
+  height: 48px;
+  line-height: 48px;
+  vertical-align: middle;
+  font-size: 11px;
+  color: #999999;
+  text-align: center;
+}
