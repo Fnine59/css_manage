@@ -220,7 +220,7 @@ html,body {
   padding: 0px 15px;
   border-radius: 3px;
   border: 1px solid #D9D9D9;
-  color: #000000;
+  color: #666666;
 }
 
 .btn-primary {
@@ -260,7 +260,7 @@ html,body {
 }
 
 .table td {
-  color: #000000;
+  color: #666666;
   font-size: 12px;
   font-weight: 400;
   padding: 13px;
@@ -325,6 +325,7 @@ html,body {
   text-align: right;
   line-height: 30px;
   vertical-align: middle;
+  color: #666666;
 }
 
 .total {
