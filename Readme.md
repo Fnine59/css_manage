@@ -1,8 +1,4 @@
-## css_manage
-
-  中台首页样式练习项目
-
-## 项目心得与总结
+## 前言
 
 在完成纯css实现中台首页样式这个练习的过程中，遇到了一系列问题，现总结如下。
 
@@ -205,4 +201,76 @@ In this specification, the expression collapsing margins means that adjoining ma
 
 [子元素应用margin-top为何会影响父元素【转】](http://www.cnblogs.com/hejia/archive/2013/05/26/3099697.html)
 
-### 子元素浮动导致父元素高度塌陷（待整理）
+### 子元素浮动导致父元素高度塌陷
+
+在使用`float`属性的时候，我们经常可以碰到如下图所示这种父元素高度塌陷的情况。
+
+![图示3.1](http://www.w3school.com.cn/i/ct_css_positioning_floating_clear_div.gif)
+
+想要理解这种情况，首先要理解浮动是什么。
+
+#### 关于浮动
+
+浮动是样式编写中经常使用到的一个属性，对于浮动的理解简单来说就是五个字：“**脱离文档流**”。来看一下官方对于浮动的解释：
+
+    浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。
+
+#### 子元素浮动导致的父元素高度塌陷
+
+如果对浮动有了一个清晰的认识，也就不难理解父元素为什么会“塌陷”。子元素脱离了普通文档流而父元素没有，因此处于普通文档流中的父元素就会“*表现得就像浮动框不存在一样*”，对于父元素来说，它的子元素就像不存在一样，因此高度也就“塌陷”了。
+
+一旦出现了这种父元素高度塌陷问题，应该如何解决？
+
+**方法一：为某个子元素设置clear属性**
+
+如下图右侧示例。
+
+![图示3.2](http://www.w3school.com.cn/i/ct_css_positioning_floating_clear_div.gif)
+
+这种方法能够实现我们希望的效果，但通常出现高度塌陷的父元素，其子元素基本均是浮动元素，如果找不到一个可以应用清理的元素，我们就只能添加一个空元素并且对它应用清理，这部分代码实际上是多余的。
+
+**方法二：对容器 div 进行浮动**
+
+这种方法是最容易理解的方法了。既然子元素浮动后脱离了普通文档流从而导致处于普通文档流中的父元素高度塌陷，那么只要让父元素也一起浮动，它就可以再次感知到子元素的存在了，高度自然也会被子元素撑开。但这种方法也有不尽人意的地方，那就是下一个处于普通文档流中的父元素也会受到这个浮动元素的影响。
+
+要解决这个问题，可以对布局中的所有东西进行浮动，然后使用适当的有意义的元素（常常是站点的页脚）对这些浮动进行清理。这有助于减少或消除不必要的标记，并且能够实现我们想要的效果。
+
+**方法三：为float元素的父元素添加overflow:hidden**
+
+为浮动元素的父元素添加`overflow:hidden;`即可解决这种塌陷问题。
+
+只要给外面大容器加上`overflow:hidden`的属性，可以解决IE7和火狐浏览器下的清除浮动问题，但是IE6下不生效，所以我们还需要使用`zoom`这个IE的私有属性来达到彻底清除浮动的兼容效果，代码如下。
+
+```CSS
+#container {
+	border: 1px solid green;
+	overflow: hidden;
+	zoom: 1;
+}
+```
+
+**方法四：使用after伪对象清除浮动**
+
+代码如下。
+
+```CSS
+#container:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+```
+
+#### 参考文章
+
+[CSS 浮动 —— w3school](http://www.w3school.com.cn/css/css_positioning_floating.asp)
+
+[CSS中子元素浮动导致父元素高度塌陷解决方案 —— CSDN](https://blog.csdn.net/liuliuliu_666/article/details/70847566)
+
+[HTML的文档流和文本流分别是什么？ —— 知乎](https://www.zhihu.com/question/21911352)
+
+[clear属性 —— w3school](http://www.w3school.com.cn/cssref/pr_class_clear.asp)
+
+
