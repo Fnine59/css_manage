@@ -58,6 +58,11 @@ html,body {
   color: #999999;
 }
 
+.sidebar-hover {
+  background-color: #494949;
+  color: #2591FC;
+}
+
 .sidebar-li:hover{
   background-color: #494949;
   color: #2F91FC;
