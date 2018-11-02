@@ -349,6 +349,12 @@ html,body {
   background-color: #FFFFFF;
   border-radius: 3px;
   margin-right: 8px;
+  cursor: pointer;
+}
+
+.page-btn:hover {
+  border: 1px solid #1F8FE7;
+  color: #1F8FE7;
 }
 
 .page-input{
@@ -361,6 +367,7 @@ html,body {
 
 .choose-page{
   border: 1px solid #1F8FE7;
+  color: #1F8FE7;
 }
 
 /* 底部 */
